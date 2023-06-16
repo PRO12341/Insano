@@ -1,0 +1,56 @@
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+
+
+function Script()
+    local Window = Library.CreateLib("Armin Script", "Ocean")
+
+
+
+    local Main = Window:NewTab("Main")
+    local MainSection = Main:NewSection("Main")
+
+
+    -- Script
+
+MainSection:NewButton("Auto sell", "Automatic sell you muscle.", function()
+       while wait() do
+local args = {
+    [1] = {
+        [1] = "SellMuscle"
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end
+ end)
+
+    MainSection:NewButton("AutoMuscle", "Give you Muscle Easy.", function()
+        while wait() do
+local args = {
+    [1] = {
+        [1] = "GainMuscle"
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end
+    end)
+
+    -- Credits
+
+
+    local Credits = Window:NewTab("Credits")
+    local CreditsSection = Credits:NewSection("Credits")
+
+
+    CreditsSection:NewLabel("Created by Armin Script,Elmejor")
+    
+
+
+end
+
+if game.PlaceId == 3652625463 then
+    Script()
+end
